@@ -1,0 +1,48 @@
+{
+    "name": "alnahari/stringk",
+    "description": "Stringk is a PHP Packages Framework to use kotlin string functions on php",
+    "license": "MIT",
+    "keywords": [
+        "String",
+        "kotlin string"
+    ],
+    "authors": [
+        {
+            "name": "Ahmed Alnahari",
+            "email": "Alnahari@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "illuminate/config": "5.2.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*",
+        "mockery/mockery": "0.*",
+        "symfony/var-dumper": "2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Alnahari\\Stringk\\": "src",
+            "Alnahari\\Library\\": "src/library"
+        },
+        "files": [
+            "helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Alnahari\\Stringk\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "stable"
+}
