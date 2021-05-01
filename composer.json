@@ -15,7 +15,7 @@
     ],
     "require": {
         "php": ">=5.5.0",
-        "illuminate/config": "5.2.*"
+        "illuminate/config": "dev-master as  5.2.*"
     },
     "require-dev": {
         "phpunit/phpunit": "4.*",
