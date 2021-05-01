@@ -54,6 +54,4 @@ class StringTest extends TestCase
         $result = string("this is is only test")->substringAfter("this")->substringBefore("test");
         $this->assertEquals("is is only", $result);
     }
-
-
 }

@@ -6,7 +6,10 @@ use Closure;
 use Exception;
 
 /**
- * @property-read int $lastIndex
+ * @property-read int   $lastIndex
+ * @property-read array $indices
+ * @property-read bool  $isEmpty
+ * @property-read int   $length
  * @method Stringk forEach(Closure $action)
  * @method Stringk trim()
  * @author  Ahmed Alnahari <alna7ari@gmail.com>
@@ -16,7 +19,9 @@ class Stringk
 {
     private static $varProxies = [
         'lastIndex',
-        'indices'
+        'indices',
+        'isEmpty',
+        'length'
     ];
 
     private static $keyWordsProxies = [
@@ -121,13 +126,6 @@ class Stringk
         return $this->value == $other;
     }
 
-    private function forEachProxy(Closure $action) {
-        foreach ($this->toCharArray() as $char) {
-            $action($char);
-        }
-        return $this;
-    }
-
     function forEachIndexed(Closure $action) {
         foreach ($this->toCharArray() as $index => $char) {
             $action($index, $char);
@@ -161,7 +159,14 @@ class Stringk
         return $this;
     }
 
-    function trimProxy() {
+    private function forEachProxy(Closure $action) {
+        foreach ($this->toCharArray() as $char) {
+            $action($char);
+        }
+        return $this;
+    }
+
+    private function trimProxy() {
         $this->value = trim($this->value);
         return $this;
     }
